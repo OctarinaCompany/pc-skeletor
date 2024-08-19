@@ -290,8 +290,11 @@ class LaplacianBasedContractionBase(SkeletonBase):
         self.topology_graph, topology_points = self.__simplify_graph(graph=self.skeleton_graph)
 
         self.topology = o3d.geometry.LineSet()
-        self.topology.points = o3d.utility.Vector3dVector(topology_points)
-        self.topology.lines = o3d.utility.Vector2iVector(list((self.topology_graph.edges())))
+        #self.topology.points = o3d.utility.Vector3dVector(topology_points)
+        #self.topology.lines = o3d.utility.Vector2iVector(list((self.topology_graph.edges())))
+
+        self.topology.points = o3d.utility.Vector3dVector(skeleton_points)
+        self.topology.lines = o3d.utility.Vector2iVector(list((self.skeleton_graph.edges())))
 
         return self.topology
 

@@ -1,6 +1,6 @@
-numpy
+numpy==1.23.1
 robust_laplacian==0.2.4
-scipy
+scipy==1.8.0
 matplotlib
 open3d==0.16
 tqdm
