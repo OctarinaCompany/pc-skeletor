@@ -33,24 +33,26 @@ information of the point cloud into the contraction algorithm to overcome these 
 
 ## ⚡️ Quick Start
 
-### Installation
+### Installation with virtual environment
 
-First install [Python](https://www.python.org/downloads/) Version 3.8 or higher. The python package can be installed
-via [PyPi](https://pypi.org/project/pc-skeletor/) using pip.
+First install [Python](https://www.python.org/downloads/) Version 3.8 or higher. Download and run setup_env.ps1 in a folder.
 
- ````sh
-pip install pc-skeletor
+ ````ps1
+.\setup_env.ps1
  ````
 
-### Installation from Source
+### Troubleshooting
 
- ````sh
-git clone https://github.com/meyerls/pc-skeletor.git
-cd pc-skeletor
-pip install --upgrade pip setuptools
-pip install -r requirements.txt
-pip install -e .
- ````
+For Windows users, there might be issues installing the `mistree` library via `python -m pip install mistree` command.
+If you get an error message that the Fortran compiler cannot be found, please try the following:
+
+- Download and install this suite of compilation tools: http://www.equation.com/servlet/equation.cmd?fa=fortran
+- Add the `bin` folder in the installation directory to your `PATH` environment variable
+- After restarting your terminal and now trying to install `mistree` this should work now.
+- However, upon importing the library you might face an issue with missing DLL files. You simply need to copy or move
+  them within the `mistree` installation directory, as explained
+  here: https://github.com/knaidoo29/mistree/issues/14#issuecomment-1275022276
+- Now the PC-Skeletor should be running on your Windows machine.
 
 ### Basic Usage
 
@@ -217,19 +219,6 @@ found in the [robust-laplacians-py](https://github.com/nmwsharp/robust-laplacian
 
 The Minimum Spanning Tree is computed via  [Mistree](https://arxiv.org/pdf/1910.08562.pdf) a
 open-source implementation which can be found [here](https://github.com/knaidoo29/mistree).
-
-## :interrobang: Troubleshooting
-
-For Windows users, there might be issues installing the `mistree` library via `python -m pip install mistree` command.
-If you get an error message that the Fortran compiler cannot be found, please try the following:
-
-- Download and install this suite of compilation tools: http://www.equation.com/servlet/equation.cmd?fa=fortran
-- Add the `bin` folder in the installation directory to your `PATH` environment variable
-- After restarting your terminal and now trying to install `mistree` this should work now.
-- However, upon importing the library you might face an issue with missing DLL files. You simply need to copy or move
-  them within the `mistree` installation directory, as explained
-  here: https://github.com/knaidoo29/mistree/issues/14#issuecomment-1275022276
-- Now the PC-Skeletor should be running on your Windows machine.
 
 ## :heavy_exclamation_mark: Limitation / Improvements
 
