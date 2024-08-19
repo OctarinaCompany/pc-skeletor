@@ -8,4 +8,4 @@ python -m venv env
 pip install numpy==1.23.1
 
 # Install packages from requirements.txt
-pip install -r requirements.txt
+pip install git+https://github.com/OctarinaCompany/pc-skeletor.git
